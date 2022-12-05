@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Places</title>
+    <style>
+        .main {
+            width: 100%;
+            background-color: #ccc;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            const images = ['af', 'ap', 'ch', 'gom', 'hm', 'ks', 'mp', 'mt', 'rf', 'shs', 'taj', 'vm'];
+
+            const el = document.getElementById('box');
+
+            images.forEach(item => {
+                const im = document.createElement('img');
+                im.src = `./images/${item}.jpeg`;
+                im.alt = 'image not found';
+                im.width = '450';
+                im.height = '300';
+                im.style.padding = '20px 20px 20px 20px';
+                el.appendChild(im);
+            });
+        }
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <div class="main" id="main-box">
+        <h3 class="title">Historical Places</h3>
+        <div id="box">
+        </div>
+    </div>
+</body>
+
+</html>
