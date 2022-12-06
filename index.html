@@ -8,16 +8,34 @@
     <title>Historical Places</title>
     <style>
         .main {
-            width: 100%;
+            display: grid;
             background-color: #ccc;
+            padding: 10px;
+        }
+
+        .box-display {
+            display: grid;
+            grid-template-columns: auto auto auto;
         }
 
         .title {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 20px;
+            padding: 20px;
+            background: #1abc9c;
+            color: white;
+            font-size: 30px;
         }
+
+        .img-cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            margin-bottom: 10px;
+        }
+
     </style>
     <script>
         function myFunction() {
@@ -26,13 +44,21 @@
             const el = document.getElementById('box');
 
             images.forEach(item => {
+                const dv = document.createElement('div');
                 const im = document.createElement('img');
+                const details = document.createElement('div');
                 im.src = `./images/${item}.jpeg`;
                 im.alt = 'image not found';
                 im.width = '450';
                 im.height = '300';
                 im.style.padding = '20px 20px 20px 20px';
-                el.appendChild(im);
+                im.style.borderRadius = '36px'
+                details.innerHTML = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad incidunt perferendis soluta voluptas, quia odio consequuntur aliquid corporis necessitatibus facere saepe vero assumenda veniam dolorem quas tempora neque ab. Deserunt?"
+                dv.style.border = '1px solid #abc';
+                details.classList.add('img-cards');
+                dv.appendChild(im);
+                dv.appendChild(details);
+                el.appendChild(dv);
             });
         }
     </script>
@@ -40,10 +66,13 @@
 
 <body onload="myFunction()">
     <div class="main" id="main-box">
-        <h3 class="title">Historical Places</h3>
-        <div id="box">
+        <div class="title">Historical Places</div>
+        <div id="box" class="box-display">
         </div>
     </div>
+    <footer class="title">  
+        &#169; Designed and developed by &nbsp;<b> Hemant Kumar Gola </b>.     
+    </footer>  
 </body>
 
 </html>
